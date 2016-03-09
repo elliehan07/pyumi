@@ -1,5 +1,5 @@
 # pyumi
-Python package for automating the settings, simulation, and processing of umi for Rhinoceros 3D.  
+IronPython package for the automation of settings, simulation, and processing of umi for Rhinoceros 3D.  
 
 ![alt text][logo]
 
