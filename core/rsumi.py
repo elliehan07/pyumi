@@ -4,6 +4,7 @@ import Rhino
 import zipfile
 import os.path
 import json
+import tempfile, shutil
 
 
 def SetTemp(bldg,temp):
@@ -47,3 +48,31 @@ def unzip(source_filename, dest_dir):
                 if word in (os.curdir, os.pardir, ''): continue
                 path = os.path.join(path, word)
             zf.extract(member, path)
+
+
+def Save(OutputPath):
+    rs.Command("_-SaveAs" +" " +OutputPath+ " ")
+
+def SaveTemp(OutputPath):
+    rs.Command("_-SaveAs" +" " +OutputPath+ " ")
+
+
+
+def GetBldgs():
+    path = tempfile.mkdtemp()
+    path = str(path) + "\\umitemp.umi"
+    rs.Command("_-UmiBundleSaveAs" +" " + path + " ")
+    path_out = tempfile.mkdtemp()
+    unzip(path,path_out)
+    jsondata = str(path_out) + "\\sdl-common\\sdl-common\\project.json"
+    with open(jsondata) as data_file:
+        data = json.load(data_file)
+        features = data["features"]
+        bldgs = []
+    for i in range(0,int(len(features))):
+        bldgs.append(data["features"][i]["id"])
+    return bldgs
+    
+
+bldgs = GetBldgs()
+SetWWR(bldgs,0.9)
