@@ -5,6 +5,7 @@ import zipfile
 import os.path
 import json
 import tempfile, shutil
+import time
 
 
 def SetTemp(bldg,temp):
@@ -51,7 +52,7 @@ def unzip(source_filename, dest_dir):
 
 
 def Save(OutputPath):
-    rs.Command("_-SaveAs" +" " +OutputPath+ " ")
+    rs.Command("_-UmiBundleSaveAs" +" " +OutputPath+".umi" " ")
 
 def SaveTemp(OutputPath):
     rs.Command("_-SaveAs" +" " +OutputPath+ " ")
@@ -72,7 +73,10 @@ def GetBldgs():
     for i in range(0,int(len(features))):
         bldgs.append(data["features"][i]["id"])
     return bldgs
-    
 
+
+
+### Hello World ## 
 bldgs = GetBldgs()
 SetWWR(bldgs,0.9)
+
