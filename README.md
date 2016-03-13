@@ -1,5 +1,5 @@
-# ${1:pyumi}  
-__
+Alt-pyumi 
+======
 ![alt text][logo] 
 
 pyumi is a python and IronPython package for automating and processing in umi simulations and visualization respectively. pyumi enables asynchronous simulation for urban energy modeling, meaning using pyumi a urban modeler can set a range of variables and a timer for set and forget simulations. 
@@ -16,7 +16,8 @@ In addition to asynchronous simulation, pyumi has a library for visualizing resu
 To get started, download and unzip to your machine. 
 
 ![alt text][download] 
-__
+
+======
 ## Usage
 
 Considering the user has some experience with umi, [if not check this out.] (http://www.urbanmodeling.net) 
@@ -79,7 +80,7 @@ TODO: Write license
 
 
 
-[download]: https://github.com/jamiefarrell/pyumi/blob/master/img/DownloadZIP.png
+[download]: https://github.com/jamiefarrell/pyumi/blob/master/img/DownloadZIP.PNG
 [logo]: https://github.com/jamiefarrell/pyumi/blob/master/img/pyumi.png
 
 
