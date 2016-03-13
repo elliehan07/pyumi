@@ -3,8 +3,21 @@ IronPython package for the automation of settings, simulation, and processing in
 
 ![alt text][logo]
 
-[logo]: https://github.com/jamiefarrell/pyumi/blob/master/pyumi.png
+
 
 ## Dependencies 
 ### [Pandas] (http://pandas.pydata.org/ "Title")
 ### [Matplotlib] (http://matplotlib.org/ "Title") 
+
+
+
+
+
+
+
+
+
+
+
+[download]: https://github.com/jamiefarrell/pyumi/blob/master/img/DownloadZIP.png
+[logo]: https://github.com/jamiefarrell/pyumi/blob/master/img/pyumi.png
