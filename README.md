@@ -41,7 +41,7 @@ Considering the user has some experience with umi, [if not check this out.] (htt
 Example:
 
 ```pyhton
-	OutputPath = "C:\\Users\\YourUserName\\Desktop\\PB3\\"
+	path = "C:\\Users\\YourUserName\\Desktop\\"
 
 	bldgs = GetBldgs()
 
@@ -53,12 +53,12 @@ Example:
 	    	Rhino.RhinoApp.SetCommandPrompt(str(W))
 	    	time.sleep(1)
     	rs.Command("_-UmiSimulateEnergy"+ " ")
+    	## Wait time for simulation 50 seconds - Run a sim first to find out how long your model takes ##
     	for F in xrange(50):
 	    	Rhino.RhinoApp.SetCommandPrompt(str(F))
 	    	time.sleep(1)
-    	UmiSave("run"+str(name))
+    	Save(path+str(name))
 
-	rhino.close()
 ```
 
 ## Contributing
