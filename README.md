@@ -2,7 +2,7 @@ Alt-pyumi
 ======
 ![alt text][logo] 
 
-pyumi is a python and IronPython package for automating and processing in umi simulations and visualization respectively. pyumi enables asynchronous simulation for urban energy modeling, meaning using pyumi a urban modeler can set a range of variables and a timer for set and forget simulations. 
+pyumi is a python and IronPython package for automating and processing in umi simulations and visualization respectively. pyumi enables asynchronous simulation for urban energy modeling, meaning using pyumi a urban modeler can set a range of variables and a timer for set-and-forget simulations. 
 
 1. selects buildings 
 2. programmability changes variables 
@@ -10,14 +10,15 @@ pyumi is a python and IronPython package for automating and processing in umi si
 4. saves simulation 
 5. repeat 
 
-In addition to asynchronous simulation, pyumi has a library for visualizing results from multiple files using matplotlib and panda's data frames.   
+In addition to asynchronous simulation, pyumi has a library for visualizing results from multiple files using matplotlib and panda's data frames.  (see vis.py) 
+
 ## Installation
 
 To get started, download and unzip to your machine. 
 
 ![alt text][download] 
 
-======
+
 ## Usage
 
 Considering the user has some experience with umi, [if not check this out.] (http://www.urbanmodeling.net) 
@@ -39,8 +40,7 @@ Considering the user has some experience with umi, [if not check this out.] (htt
 
 Example:
 
-'''python
-	
+```pyhton
 	OutputPath = "C:\\Users\\YourUserName\\Desktop\\PB3\\"
 
 	bldgs = GetBldgs()
@@ -59,7 +59,7 @@ Example:
     	UmiSave("run"+str(name))
 
 	rhino.close()
-'''
+```
 
 ## Contributing
 
@@ -78,15 +78,10 @@ TODO: Write credits
 ## License
 TODO: Write license
 
+## Dependencies for vis  
+[Pandas] (http://pandas.pydata.org/ "Title")
+[Matplotlib] (http://matplotlib.org/ "Title") 
 
 
 [download]: https://github.com/jamiefarrell/pyumi/blob/master/img/DownloadZIP.PNG
 [logo]: https://github.com/jamiefarrell/pyumi/blob/master/img/pyumi.png
-
-
-## Dependencies 
-### [Pandas] (http://pandas.pydata.org/ "Title")
-### [Matplotlib] (http://matplotlib.org/ "Title") 
-
-### [Matplotlib] (http://www.urbanmodeling.net) 
-
