@@ -5,7 +5,7 @@ pyumi
 pyumi is a python and IronPython package for automating and processing in umi simulations and visualization respectively. pyumi enables asynchronous simulation for urban energy modeling, meaning using pyumi a urban modeler can set a range of variables and a timer for set-and-forget simulations. 
 
 1. selects buildings 
-2. programmability changes variables 
+2. programmatically changes variables 
 3. runs simulation 
 4. saves simulation 
 5. repeat 
