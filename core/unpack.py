@@ -2,7 +2,7 @@
 """
 Created on Wed Mar 09 14:08:07 2016
 
-@author: rjf
+@author: @jamie_farrell
 """
 import zipfile
 import os
