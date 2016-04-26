@@ -1,5 +1,0 @@
-C:\Users\rjf\Desktop\pyumi\Grasshopper\pyumi\pyumi\bin\pyumi.dll
-C:\Users\rjf\Desktop\pyumi\Grasshopper\pyumi\pyumi\bin\pyumi.pdb
-C:\Users\rjf\Desktop\pyumi\Grasshopper\pyumi\pyumi\obj\Debug64\pyumi.csprojResolveAssemblyReference.cache
-C:\Users\rjf\Desktop\pyumi\Grasshopper\pyumi\pyumi\obj\Debug64\pyumi.dll
-C:\Users\rjf\Desktop\pyumi\Grasshopper\pyumi\pyumi\obj\Debug64\pyumi.pdb
