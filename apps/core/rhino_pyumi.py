@@ -105,8 +105,7 @@ def umiFAR():
     rs.Command("_-UmiCalculateFAR"+ " ")
 
 
-
 ### Hello World ## 
 bldgs = GetBldgs()
-SetWWR(bldgs,0.9)
-
+for i in range(0,len(bldgs)):
+    SetWWR(bldgs[i],0.9)
