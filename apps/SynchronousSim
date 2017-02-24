@@ -1,7 +1,7 @@
-##Most stable geometry generator and synchronous simulation yet. No discrepancies beyond UMI 3.1.1 and Rhino 5. 
-##The script takes input of amount of buildings and building uniform size 
-##Next it iterates through increasing building height and simulates each for energy 
-##It saves the files as individual umi files.
+##Most stable geometry generator and synchronous simulation yet. No dependencies beyond UMI 3.1.1 and Rhino 5. 
+##The script takes input of amount of buildings and an uniform size and makes a simple grid layout.
+##Next it iterates through each building increasing building height and simulating for Energy Use.  
+##It saves the files as individual umi files in a set repository
 
 import rhinoscriptsyntax as rs
 
