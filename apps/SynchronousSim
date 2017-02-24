@@ -1,0 +1,83 @@
+## run in Rhino with a UMI project file open. Also make sure to set the proper output folder. I used Desktop. 
+##The script take input of amont of buildings and building uniform size 
+##Next it iterates through increaing building height and simulates each for energy 
+##It saves the files as indiviual umi files. 
+import rhinoscriptsyntax as rs
+
+class Building:
+    def __init__(self,Guid,Origin):
+        self.Guid = Guid
+        self.Origin = Origin
+
+def MakeGrid(size,amount):
+    cells = []
+    points = []
+    for i in range(0,amount):
+        for j in range(0,amount):
+            point =[i*size,j*size,0]
+            points.append(point)
+            cell = rs.AddRectangle(point, size/1.5,size/1.5)
+            cells.append(cell)
+    return cells,points
+
+def MakeProtoblock(size,amount,height):
+    rs.DeleteObjects(rs.AllObjects())
+    grid = MakeGrid(size,amount)
+    footprints = grid[0]
+    origin = grid[1]
+    breps = []
+    origins = []
+    for i in range(0,len(footprints)):
+        brep = rs.ExtrudeCurveStraight(footprints[i],origin[i],[origin[i][0],origin[i][1],height])
+        rs.CapPlanarHoles(brep)
+        try:
+            rs.ObjectLayer(brep, layer='umi::Buildings')
+            breps.append(brep)
+            origins.append(origin[i])
+        except:
+            raise NameError('START AN UMI PROJECT')
+    return breps , origins
+
+
+Protoblock = MakeProtoblock (10,2,10)
+
+Set = Building(Protoblock[0],Protoblock[1])
+
+def SetTemp(bldg,temp):
+    rs.SelectObject(bldg)
+    rs.Command("UmiSetBuildingSetting S T "+temp+ " ")
+
+
+def SetName(bldg):
+    rs.SelectObject(bldg)
+    rs.Command("UmiMultiname b")
+
+Set = []
+
+for i in range(0,len(Protoblock[0])):
+    Set.append(Building(Protoblock[0][i],Protoblock[1][i]))
+
+for i in range(0,len(Set)):
+    SetTemp(Set[i].Guid,"B_Off_0")
+
+SetName(Set[0].Guid)
+
+def Save(OutputPath):
+    rs.Command("_-UmiBundleSaveAs" +" " +OutputPath+".umi" " ")
+    
+def umiEnergy():
+    rs.Command("UmiSimulateEnergySynchronously"+ " ")
+
+runNum = 0
+for i in range(0,len(Set)):
+    SetTemp(Set[i].Guid,"B_Off_0")
+    for j in range(1,3):
+        runNum = runNum + 1 
+        rs.ScaleObject(Set[0+i].Guid,Set[0+i].Origin,[1,1,1+((2/j)*.1)])
+        #MAKE A FOLDER FIRST#
+        try:
+            Save("C:\\Users\\USERNAME\\Desktop\\Output2\\ResultFile"+str(runNum))
+            umiEnergy()
+            rs.Command("UmiRefreshPreviews")
+        except:
+            raise NameError('MAKE AN OUTPUT FOLDER AND SET THE PATH IN THE CODE')
