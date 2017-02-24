@@ -78,7 +78,7 @@ for i in range(0,len(Set)):
         #MAKE A FOLDER FIRST#
         try:
             Save("C:\\Users\\USERNAME\\Desktop\\Output2\\ResultFile"+str(runNum))
-            umiEnergy()
+            ##umiEnergy()
             rs.Command("UmiRefreshPreviews")
         except:
             raise NameError('MAKE AN OUTPUT FOLDER AND SET THE PATH IN THE CODE')
