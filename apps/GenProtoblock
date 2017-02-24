@@ -1,0 +1,23 @@
+# Make Grid 
+
+import rhinoscriptsyntax as rs
+
+def MakeGrid(size,amount):
+    cells = []
+    points = []
+    for i in range(0,amount):
+        for j in range(0,amount):
+            point =[i*size,j*size,0]
+            points.append(point)
+            cell = rs.AddRectangle(point, size/1.5,size/1.5)
+            cells.append(cell)
+    return cells,points
+
+def MakeProtoblock(size,amount,height):
+    grid = MakeGrid(size,amount)
+    footprints = grid[0]
+    orign = grid[1]
+    for i in range(0,len(footprints)):
+        rs.ExtrudeCurveStraight(footprints[i],orign[i],[orign[i][0],orign[i][1],height])
+
+MakeProtoblock (5,5,5)
