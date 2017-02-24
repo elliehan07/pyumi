@@ -1,7 +1,8 @@
-## run in Rhino with a UMI project file open. Also make sure to set the proper output folder. I used Desktop. 
-##The script take input of amont of buildings and building uniform size 
-##Next it iterates through increaing building height and simulates each for energy 
-##It saves the files as indiviual umi files. 
+##Most stable geometry generator and synchronous simulation yet. No discrepancies beyond UMI 3.1.1 and Rhino 5. 
+##The script takes input of amount of buildings and building uniform size 
+##Next it iterates through increasing building height and simulates each for energy 
+##It saves the files as individual umi files.
+
 import rhinoscriptsyntax as rs
 
 class Building:
