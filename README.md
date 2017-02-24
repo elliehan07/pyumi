@@ -12,6 +12,8 @@ pyumi is a python and IronPython package for automating and processing in umi si
 
 In addition to asynchronous simulation, pyumi has a library for visualizing results from multiple files using matplotlib and panda's data frames.  (see vis.py) 
 
+Pyumi also has functions for generating and scaling urban protoblock geometry, converting geometry to UMI building class and running iterative simulation. This process generates many files so you will also find functions for batch parsing umi files.  
+
 ## Installation
 
 To get started, download and unzip to your machine. 
